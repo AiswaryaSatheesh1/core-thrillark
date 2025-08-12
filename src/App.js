@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import BallotIcon from "@mui/icons-material/Ballot";
@@ -8,49 +9,54 @@ import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import ReorderIcon from "@mui/icons-material/Reorder";
 import "./App.css";
 import logo from "./assets/icons/logo.jpg";
+
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="navbar">
+    <nav
+      className={`navbar ${isOpen ? "open" : "collapsed"}`}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <div className="logo-title">
-        <img src={logo} alt="Snyk Logo" className="logo" />
-        <h2 className="title">Thrillark</h2>
+        <img src={logo} alt="Thrillark Logo" className="logo" />
+        {isOpen && <h2 className="title">Thrillark</h2>}
       </div>
       <ul className="nav-links">
         <li className="navbar-item">
           <HomeIcon className="icon" />
-          <span className="text">Dashboard</span>
+          {isOpen && <span className="text">Dashboard</span>}
         </li>
         <li className="navbar-item">
-          <DoNotDisturbIcon className="icon" />{" "}
-          <span className="text">Failed Logs</span>
+          <DoNotDisturbIcon className="icon" />
+          {isOpen && <span className="text">Failed Logs</span>}
         </li>
         <li className="navbar-item">
           <CategoryIcon className="icon" />
-          <span className="text">Manage Category</span>
+          {isOpen && <span className="text">Manage Category</span>}
         </li>
-        <li className="active">
+        <li className="navbar-item active">
           <ArrowCircleRightIcon className="icon" />
-          <span className="text">Manage Product</span>
+          {isOpen && <span className="text">Manage Product</span>}
         </li>
         <li className="navbar-item">
-          {" "}
           <LocalActivityIcon className="icon" />
-          <span className="text">Availability</span>
+          {isOpen && <span className="text">Availability</span>}
         </li>
         <li className="navbar-item">
           <ReorderIcon className="icon" />
-          <span className="text">Manage Variants</span>
+          {isOpen && <span className="text">Manage Variants</span>}
         </li>
         <li className="navbar-item">
           <BallotIcon className="icon" />
-          <span className="text">API Variants</span>
+          {isOpen && <span className="text">API Variants</span>}
         </li>
         <li className="navbar-item">
           <AddPhotoAlternateIcon className="icon" />
-          <span className="text">Manage Media</span>
+          {isOpen && <span className="text">Manage Media</span>}
         </li>
       </ul>
-      <div>a</div>
     </nav>
   );
 }
