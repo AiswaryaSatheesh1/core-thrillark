@@ -8,10 +8,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import ReorderIcon from "@mui/icons-material/Reorder";
 import { useState } from "react";
-import "./App.css";
-import logo from "./assets/icons/logo.jpg";
+import logo from "../../assets/icons/logo.jpg";
+import "./navbar.css";
 
-function App() {
+function Navbar() {
   const [isPinned, setIsPinned] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -19,22 +19,26 @@ function App() {
 
   return (
     <nav
-  className={`navbar ${isOpen ? "open" : "collapsed"}`}
-  onMouseEnter={() => {
-    if (!isPinned) setIsHovered(true);
-  }}
-  onMouseLeave={() => {
-    if (!isPinned) setIsHovered(false);
-  }}
->
-  <div className="logo-title">
-    <img src={logo} alt="Thrillark Logo" className="logo" />
-    {isOpen && <h2 className="title">Thrillark</h2>}
-    <FormatIndentIncreaseIcon
-      className="tog"
-      onClick={() => setIsPinned((prev) => !prev)}
-    />
-  </div>
+      className={`navbar ${isOpen ? "open" : "collapsed"}`}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
+    >
+      <div className="logo-title">
+        <img src={logo} alt="Thrillark Logo" className="logo" />
+        {isOpen && (
+          <>
+            <h2 className="title">Thrillark</h2>
+            <FormatIndentIncreaseIcon
+              className="tog"
+              onClick={() => setIsPinned((prev) => !prev)}
+            />
+          </>
+        )}
+      </div>
       <ul className="nav-links">
         <li className="navbar-item">
           <HomeIcon className="icon" />
@@ -73,4 +77,4 @@ function App() {
   );
 }
 
-export default App;
+export default Navbar;

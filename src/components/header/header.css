@@ -1,0 +1,71 @@
+.header {
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 70px;
+  color: rgb(23, 57, 57);
+  white-space: nowrap;
+  font-weight: bolder;
+}
+.create {
+  background-color: rgb(4, 79, 79);
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  height: 35px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: aliceblue;
+  font-weight: normal;
+}
+.createbutton {
+  justify-content: space-between;
+  display: flex;
+  gap: 10px;
+  padding-left: 860px;
+}
+.import {
+  background-color: rgb(4, 79, 79);
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: aliceblue;
+  font-weight: normal;
+}
+.export {
+  background-color: rgb(4, 79, 79);
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: aliceblue;
+  font-weight: normal;
+}
+.breadcrumb {
+  font-size: 14px;
+  color: #123036;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb .separator {
+  color: #555;
+}
+.box {
+  width: 1000%;
+}
