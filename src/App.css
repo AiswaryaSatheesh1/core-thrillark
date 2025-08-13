@@ -36,6 +36,9 @@ body {
   color: #11f1c4;
   text-shadow: 1px 1px 2px #000;
   white-space: nowrap;
+ padding-left: 10px;
+  
+  
 }
 
 .logo-title {
@@ -109,5 +112,5 @@ body {
 }
 .tog {
   color: #11f1c4;
-  padding-left: 45px;
+  padding-left: 30px;
 }

@@ -12,32 +12,37 @@ import "./App.css";
 import logo from "./assets/icons/logo.jpg";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isAlways, setIsAlways] = useState(false);
-  const toggleSidebar = () => {
-    setIsAlways(!isAlways);
-    console.log("Is Always", isAlways);
-  };
+  const [isPinned, setIsPinned] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const isOpen = isPinned || isHovered;
 
   return (
     <nav
-      className={`navbar ${isAlways || isOpen ? "open" : "collapsed"}`}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <div className="logo-title">
-        <img src={logo} alt="Thrillark Logo" className="logo" />
-        {(isAlways || isOpen) && <h2 className="title">Thrillark</h2>}
-        {<FormatIndentIncreaseIcon className="tog" onClick={toggleSidebar} />}
-      </div>
+  className={`navbar ${isOpen ? "open" : "collapsed"}`}
+  onMouseEnter={() => {
+    if (!isPinned) setIsHovered(true);
+  }}
+  onMouseLeave={() => {
+    if (!isPinned) setIsHovered(false);
+  }}
+>
+  <div className="logo-title">
+    <img src={logo} alt="Thrillark Logo" className="logo" />
+    {isOpen && <h2 className="title">Thrillark</h2>}
+    <FormatIndentIncreaseIcon
+      className="tog"
+      onClick={() => setIsPinned((prev) => !prev)}
+    />
+  </div>
       <ul className="nav-links">
         <li className="navbar-item">
           <HomeIcon className="icon" />
-          {(isAlways || isOpen) && <span className="text">Dashboard</span>}
+          {isOpen && <span className="text">Dashboard</span>}
         </li>
         <li className="navbar-item">
           <DoNotDisturbIcon className="icon" />
-          {(isAlways || isOpen) && <span className="text">Failed Logs</span>}
+          {isOpen && <span className="text">Failed Logs</span>}
         </li>
         <li className="navbar-item">
           <CategoryIcon className="icon" />
