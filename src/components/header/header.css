@@ -33,7 +33,7 @@
   justify-content: space-between;
   display: flex;
   gap: 10px;
-  padding-left: 860px;
+  padding-left: 750px;
 }
 .import {
   background-color: rgb(4, 79, 79);
@@ -62,7 +62,7 @@
   align-items: center;
   gap: 6px;
   flex-wrap: nowrap;
-  white-space: nowrap; 
+  white-space: nowrap;
   font-weight: normal;
   cursor: pointer;
 }
