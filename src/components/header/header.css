@@ -13,7 +13,7 @@
 .header-title {
   font-size: 20px;
   font-weight: 600;
-  padding-left: 70px;
+  padding-right: 50px;
   color: rgb(23, 57, 57);
   white-space: nowrap;
   font-weight: bolder;
@@ -61,11 +61,19 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: nowrap;
+  white-space: nowrap; 
+  font-weight: normal;
+  cursor: pointer;
 }
 
 .breadcrumb .separator {
   color: #555;
 }
-.box {
-  width: 1000%;
+
+.title-breadcrumb {
+  display: flex;
+  flex-direction: column;
+  padding-left: 70px;
+  padding-bottom: 10px;
 }
