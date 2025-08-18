@@ -4,6 +4,7 @@ import { Button, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
 import "./body.css";
 import LongMenu from "./longmenu";
+import List from "./list";
 
 function Body() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +31,7 @@ function Body() {
   };
 
   return (
+    <div>
     <div className="body">
       <div className="search-container">
         <div className="search-header">
@@ -140,7 +142,12 @@ function Body() {
           <LongMenu className="longmenu" />
         </div>
       </div>
+       <div className="list-container">
+        <List />
+      </div>
     </div>
+    </div>
+      
   );
 }
 

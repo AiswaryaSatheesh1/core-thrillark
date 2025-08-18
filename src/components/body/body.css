@@ -5,6 +5,9 @@
   z-index: 1;
   position: relative;
   margin-left: 49px;
+  background-color: tomato;
+    flex-direction: column;
+    height: 100%;
 }
 
 .search-container {
@@ -13,7 +16,9 @@
   align-items: center;
   justify-items: space-between;
 
-  /* border-bottom: 1px solid; */
+  
+
+
 }
 .searchip {
   width: 80vw;
@@ -87,8 +92,15 @@
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 50px;
   gap: 10px;
 
   margin-right: 25px;
+}
+.list-container{
+  background-color: rgb(50, 19, 13);
+
+  border-radius: 20px;
+
+    flex: 1;
 }
